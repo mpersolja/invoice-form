@@ -1,0 +1,23 @@
+VUE_APP_TITLE_LABEL="INVOICE: "
+VUE_APP_ISSUE_PLACE_LABEL="Place of issue"
+VUE_APP_SERVICE_DATE_LABEL="Date of service"
+VUE_APP_PAYMENT_DAY_LABEL="Payment deadline"
+VUE_APP_INVOICE_DATE_LABEL="Date of issue"
+VUE_APP_PAYMENT_INFO="Additional notes under the table"
+
+VUE_APP_HEADER_CONTENT="<strong>Invoice header</strong><br />html allowed"
+VUE_APP_FOOTER_CONTENT="<strong>Invoice footer</strong><br />html allowed here too"
+
+VUE_APP_THEAD_C1_LABEL="#"
+VUE_APP_THEAD_C2_LABEL="Description"
+VUE_APP_THEAD_C3_LABEL="Time"
+VUE_APP_THEAD_C4_LABEL="Ammount"
+VUE_APP_TFOOT_C1_LABEL="TOTAL"
+
+VUE_APP_CURRENCY="EUR"
+VUE_APP_LOCALE="sl-SI"
+VUE_APP_DATE_FORMAT="dd. MM. yyyy"
+VUE_APP_PAYMENT_DELAY=18
+VUE_APP_SERVICE_DATE_DIFF=-1
+VUE_APP_ISSUE_PLACE="Fortress of solitude"
+VUE_APP_RATE=25
