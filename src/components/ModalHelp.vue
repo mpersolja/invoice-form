@@ -16,6 +16,7 @@
         <li><kbd>Alt + &gt;</kbd>: Decrement invoice date</li>
         <li><kbd>Ctrl + s</kbd>: Save config</li>
         <li><kbd>Alt + .</kbd>: Load config</li>
+        <li><kbd>Alt + \</kbd>: Negate row ammount</li>
       </ul>
     </div>
   </div>
