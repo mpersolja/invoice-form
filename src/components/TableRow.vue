@@ -64,7 +64,8 @@ export default {
       }).format(number);
     },
     toTime(number) {
-      let mins = (number % 1) * 60;
+      if (number == 0) return;
+      let mins = Math.round((number % 1) * 60);
       let hours = (number - (number % 1));
       return String(hours).padStart(2,0) + ":" + String(mins).padStart(2,0) + " h"
     },
@@ -72,23 +73,24 @@ export default {
       this.$store.commit("SET_ENTRY", { ...this.$data, index: this.index });
     },
     calcAmmount() {
-      if (this.qty == "") return;
-      this.ammount = this.mult * this.qty * parseFloat(process.env.VUE_APP_RATE);
+      if (this.qty == "" || this.qty == "-") return;
+      this.ammount = this.qty * parseFloat(process.env.VUE_APP_RATE);
+      this.updateTableRow();
       this.$emit("updateAndRecalculate", { ...this.$data, index: this.index });
     },
     calcQty() {
-      if (this.ammount == "") return;
-      this.qty = this.ammount / parseFloat(process.env.VUE_APP_RATE)
+      if (this.ammount == "" || this.ammount == "-" || parseFloat(this.ammount) instanceof Number) return;
+      if( this.ammount > 0 )
+        this.qty = this.ammount / parseFloat(process.env.VUE_APP_RATE)
+      else {
+        this.qty = 0;
+      }
+      this.updateTableRow();
       this.$emit("updateAndRecalculate", { ...this.$data, index: this.index });
     },
     setActive() {
       this.$store.commit("SET_ACTIVE_ROW", this.index);
-    }
+    },
   },
-  watch: {
-    values(val, oldVal) {
-      console.log(val, oldVal);
-    }
-  }
 };
 </script>

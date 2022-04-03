@@ -83,10 +83,6 @@ export default {
         this.$store.commit("REMOVE_INVOICE_ENTRY");
         return;
       }
-      if (e.key == "\\" && e.altKey) {
-        this.$store.commit("NEGATE_AMMOUNT");
-        return;
-      }
     },
   },
   deactivated() {
