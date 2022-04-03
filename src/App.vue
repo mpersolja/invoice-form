@@ -37,7 +37,7 @@ import InvoiceInstructions from "./components/InvoiceInstructions";
 import InvoiceHeader from "./components/InvoiceHeader.vue";
 import InvoiceFooter from "./components/InvoiceFooter.vue";
 
-var kbdEv;
+var kbdEv, ctrlSEv;
 
 export default {
   name: "App",
@@ -51,9 +51,13 @@ export default {
     InvoiceFooter,
   },
   mounted() {
+    ctrlSEv = document.addEventListener("keydown", this.ctrlSHadler, false);
     kbdEv = window.addEventListener("keyup", this.evtHandler);
   },
   methods: {
+    ctrlSHadler(e) {
+      if (e.keyCode == 83 && e.ctrlKey) e.preventDefault();
+    },
     evtHandler(e) {
       if (e.key == "Escape" && e.altKey) {
         this.$store.commit("RESET_INVOICE_DATA");
@@ -87,6 +91,7 @@ export default {
   },
   deactivated() {
     window.removeEventListener(kbdEv, this.evtHandler);
+    document.removeEventListener(ctrlSEv, this.ctrlSHadler);
   },
   unmounted() {
     window.removeEventListener(kbdEv, this.evtHandler);

@@ -14,7 +14,7 @@
         <li><kbd>Alt + }</kbd>: Decrement service day diff</li>
         <li><kbd>Alt + &lt;</kbd>: Decrement invoice date</li>
         <li><kbd>Alt + &gt;</kbd>: Decrement invoice date</li>
-        <li><kbd>Alt + ,</kbd>: Save config</li>
+        <li><kbd>Ctrl + s</kbd>: Save config</li>
         <li><kbd>Alt + .</kbd>: Load config</li>
       </ul>
     </div>

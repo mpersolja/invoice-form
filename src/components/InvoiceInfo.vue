@@ -100,7 +100,7 @@ export default {
         alert("load config");
         return;
       }
-      if (e.key == "," && e.altKey) {
+      if (e.key == "s" && e.ctrlKey) {
         let so = {
           date: this.date.toFormat("yyyyMMdd"),
           paymentDelay: this.env.PAYMENT_DELAY,
