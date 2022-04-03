@@ -46,8 +46,7 @@ export default {
   },
   mounted() {},
   methods: {
-    updateAndRecalc(payload) {
-      this.$store.commit("SET_ENTRY", payload)
+    updateAndRecalc() {
       this.calcTotal()
     },
     calcTotal() {
