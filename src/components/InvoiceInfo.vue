@@ -71,6 +71,10 @@ export default {
         return;
       }
       if (e.key == "]" && e.altKey) {
+        if (this.env.SERVICE_DATE_DIFF + 1 > 0) {
+          alert('Service date can\'t be greater than ' + this.date.toFormat(this.env.DATE_FORMAT))
+          return;
+        }
         this.env.SERVICE_DATE_DIFF += 1;
         return;
       }
