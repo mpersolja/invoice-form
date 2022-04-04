@@ -112,9 +112,8 @@ export default {
           clientData: this.client,
           entires: [...this.entries],
         };
-        console.log(so);
-        let blob = new Blob(so, { type: "text/plain;charset=utf-8" });
-        saveAs(blob, this.date.toFormat("yyyyMMdd") + "-" + this.sn + ".json");
+        let blob = new Blob([JSON.stringify(so)], { type: "text/plain;charset=utf-8" });
+        saveAs(blob, this.date.toFormat("yyyyMMdd") + "-" + this.sn.toString().padStart(3,0) + ".json");
         return;
       }
     },
